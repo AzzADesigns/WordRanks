@@ -16,8 +16,8 @@ function App() {
         <div className=" w-[98.5%]">
           <CantAndSearch/>
         </div>
-        <div className=" flex mt-8 gap-20 ">
-          <div className="flex flex-col h-9  justify-center items-start mt-[280px]">
+        <div className=" flex mt-14 ml-20 ">
+          <div className="flex flex-col h-9  justify-center items-start mt-[255px]">
             <SortRegionStatus/>
           </div>
           <div className="">
