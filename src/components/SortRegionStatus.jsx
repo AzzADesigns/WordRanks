@@ -24,7 +24,7 @@ export const SortRegionStatus = () => {
                     <div className=''>
                         <button htmlFor="" className='mr-9 hover:bg-gray-600 hover:text-white p-2 px-5 rounded-2xl'>Africa</button>
                         <button htmlFor="" className='mr-9 hover:bg-gray-600 hover:text-white p-2 px-5 rounded-2xl'>Asia</button>
-                        <button htmlFor="" className='mr-9 hover:bg-gray-600 hover:text-white p-2 px-5 rounded-2xl xl:mt-0 lg:mt-5'>Europe</button>
+                        <button htmlFor="" className='mr-9 hover:bg-gray-600 hover:text-white p-2 px-5 rounded-2xl xl:mt-0 lg:mt-4'>Europe</button>
                         <button htmlFor="" className='col-span-3 hover:bg-gray-600 hover:text-white p-2 px-5 rounded-2xl xl:hidden lg:flex-col'>Oceania</button>
                     </div>
                     <div>

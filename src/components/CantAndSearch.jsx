@@ -7,7 +7,7 @@ export const CantAndSearch = () => {
             </div>
             <div className="xl:mr-[68px] lg:mr-[32px] relative flex items-center">
                 <img src="/Search.svg" alt="" className="absolute pl-2 w-10"/>
-                <input type="Search" placeholder="Search by Name, Region, Subregion" className="bg-[#282B30] w-[440px] h-14 rounded-xl pl-14 lg:text-sm xl:text-lg"/>
+                <input type="Search" placeholder="Search by Name, Region, Subregion" className="bg-[#282B30] xl:w-[440px] lg:w-[350px] h-14 rounded-xl pl-14 lg:text-sm xl:text-lg"/>
             </div>
         </section>
     )

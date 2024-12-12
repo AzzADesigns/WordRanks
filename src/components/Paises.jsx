@@ -55,14 +55,14 @@ export const Paises = () => {
                             className="w-20 h-16 object-cover rounded-xl"
                         />
                     </div>
-                    <h3 className="flex items-center xl:pl-4 lg:pl-5 xl:text-2xl">{country.name.common}</h3>
-                    <h3 className="flex items-center xl:pl-4 lg:pl-5 xl:text-2xl xl:ml-6 lg:ml-4">
+                    <h3 className="flex items-center  lg:pl-5 xl:text-2xl">{country.name.common}</h3>
+                    <h3 className="flex items-center  lg:pl-5 xl:text-2xl xl:ml-6 lg:ml-4">
                         {country.population.toLocaleString()}
                     </h3>
-                    <h3 className="flex items-center xl:pl-4 lg:ml-10 xl:text-2xl">
+                    <h3 className="flex items-center  lg:ml-10 xl:text-2xl">
                         {country.area?.toLocaleString()}
                     </h3>
-                    <h3 className="flex items-center xl:pl-4 xl:text-2xl xl:flex lg:hidden">{country.region}</h3>
+                    <h3 className="flex items-center xl:pl-5 xl:text-2xl xl:flex lg:hidden">{country.region}</h3>
                 </section>
             ))}
             {/* Div que se observa con IntersectionObserver */}
