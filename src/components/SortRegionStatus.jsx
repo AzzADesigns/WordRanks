@@ -3,10 +3,10 @@ import '../index.css';
 
 export const SortRegionStatus = () => {
     return (
-        <form className='text-gray-600 text-xl w-full font-bold'>
+        <form className='text-gray-600 xl:text-xl w-full font-bold'>
             <fieldset>
                 <legend className="mb-4">Sort By</legend>
-                <select name="" id="" className='w-[375px] ml-5 h-16 p-4 rounded-2xl bg-gray-bg border border-gray-600 text-white' >
+                <select name="" id="" className='xl:w-[375px] lg:w-[260px] ml-5 h-16 p-4 rounded-2xl bg-gray-bg border border-gray-600 text-white' >
                     <option value="">Organize by ...</option>
                     <option  value="Name">Name</option>
                     <option  value="Population">Population</option>
@@ -24,10 +24,11 @@ export const SortRegionStatus = () => {
                     <div className=''>
                         <button htmlFor="" className='mr-9 hover:bg-gray-600 hover:text-white p-2 px-5 rounded-2xl'>Africa</button>
                         <button htmlFor="" className='mr-9 hover:bg-gray-600 hover:text-white p-2 px-5 rounded-2xl'>Asia</button>
-                        <button htmlFor="" className='mr-9 hover:bg-gray-600 hover:text-white p-2 px-5 rounded-2xl'>Europe</button>
+                        <button htmlFor="" className='mr-9 hover:bg-gray-600 hover:text-white p-2 px-5 rounded-2xl xl:mt-0 lg:mt-5'>Europe</button>
+                        <button htmlFor="" className='col-span-3 hover:bg-gray-600 hover:text-white p-2 px-5 rounded-2xl xl:hidden lg:flex-col'>Oceania</button>
                     </div>
                     <div>
-                        <button htmlFor="" className='col-span-3 hover:bg-gray-600 hover:text-white p-2 px-5 rounded-2xl'>Oceania</button>
+                        <button htmlFor="" className='col-span-3 hover:bg-gray-600 hover:text-white p-2 px-5 rounded-2xl xl:flex lg:hidden'>Oceania</button>
                     </div>
                 </div>
             </fieldset>

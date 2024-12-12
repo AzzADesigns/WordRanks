@@ -37,17 +37,17 @@ export const Paises = () => {
     }, [page, allPaises]);
 
     return (
-        <div className="h-full font-outfit text-gray-200 w-full">
-            <div className="grid grid-cols-5 gap-4  border-gray-700 py-4 w-[95%] text-gray-600 font-bold ml-4">
-            <div className="absolute bottom-[370px] right-[146px] w-[59.5%] h-[1px] bg-gray-700"></div>
-                <div className="text-xl ml-16">Flag</div>
-                <div className="text-xl">Name</div>
-                <div className="text-xl ml-6">Population</div>
-                <div className="text-xl">Area (km²)</div>
-                <div className="text-xl">Region</div>
-            </div>
+        <div className="h-full font-outfit text-gray-200 w-full xl:ml-0">
+            <section className="grid grid-cols-5 gap-4  border-gray-700 py-4 w-[95%] text-gray-600 font-bold ml-4">
+                <div className="absolute xl:bottom-[370px] lg:bottom-[960px] xl:right-[159px] xl:w-[59%] lg:w-[54.5%] h-[1px] bg-gray-700"></div>
+                <h2 className="xl:text-xl xl:ml-16 lg:ml-5">Flag</h2>
+                <h2 className="xl:text-xl xl:ml-0 lg:ml-9">Name</h2>
+                <h2 className="xl:text-xl xl:ml-6 lg:ml-20">Population</h2>
+                <h2 className="xl:text-xl xl:ml-6 lg:ml-28 xl:w-28 lg:w-28">Area (km²)</h2>
+                <h2 className="xl:text-xl xl:flex lg:hidden">Region</h2>
+            </section>
             {visiblePaises.map((country, index) => (
-                <div key={index} className="grid grid-cols-5 gap-4 border-gray-700 py-4 w-[95%]">
+                <section key={index} className="grid xl:grid-cols-5 lg:grid-cols-4 gap-4 border-gray-700 py-4 w-[95%]">
                     <div className="flex items-center justify-center">
                         <img
                             src={country.flags.svg}
@@ -55,15 +55,15 @@ export const Paises = () => {
                             className="w-20 h-16 object-cover rounded-xl"
                         />
                     </div>
-                    <div className="flex items-center pl-4 text-2xl">{country.name.common}</div>
-                    <div className="flex items-center pl-4 text-2xl ml-6">
+                    <h3 className="flex items-center xl:pl-4 lg:pl-5 xl:text-2xl">{country.name.common}</h3>
+                    <h3 className="flex items-center xl:pl-4 lg:pl-5 xl:text-2xl xl:ml-6 lg:ml-4">
                         {country.population.toLocaleString()}
-                    </div>
-                    <div className="flex items-center pl-4 text-2xl">
+                    </h3>
+                    <h3 className="flex items-center xl:pl-4 lg:ml-10 xl:text-2xl">
                         {country.area?.toLocaleString()}
-                    </div>
-                    <div className="flex items-center pl-4 text-2xl">{country.region}</div>
-                </div>
+                    </h3>
+                    <h3 className="flex items-center xl:pl-4 xl:text-2xl xl:flex lg:hidden">{country.region}</h3>
+                </section>
             ))}
             {/* Div que se observa con IntersectionObserver */}
             <div ref={observerRef} className="h-50 bg-red w-full" />
