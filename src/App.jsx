@@ -7,8 +7,8 @@ function App() {
 
 
   return (
-    <section className="bg-[#000002] h-full  font-outfit text-white flex flex-col  items-center ">
-      <header className="w-full bg-red-200">
+    <section className="bg-[#000002] h-full  font-outfit text-white flex flex-col  items-center">
+      <header className="w-full">
         <Header/>
       </header>
 
@@ -16,11 +16,11 @@ function App() {
         <div className=" w-[98.5%]">
           <CantAndSearch/>
         </div>
-        <div className=" flex mt-14  lg:ml-10">
-          <div className="flex flex-col h-[20%] xl:mt-2 lg:mt-2  xl:ml-10 justify-center items-start mt-[255px]">
+        <div className=" lg:flex lg:flex-row lg:items-start lg:mt-14  lg:ml-10 sm:flex sm:flex-col  lg:gap-1 sm:gap-5 sm:mt-0">
+          <div className="flex flex-col h-[20%] xl:mt-2  xl:ml-10 justify-center items-start  sm:w-full lg:w-auto sm:mt-12 ">
             <SortRegionStatus/>
           </div>
-          <div className="">
+          <div className=" sm:flex sm:justify-center  lg:mt-8">
             <Paises/>
           </div>
         </div>
