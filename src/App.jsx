@@ -7,12 +7,12 @@ function App() {
 
 
   return (
-    <section className="bg-[#000002] h-full  font-outfit text-white flex flex-col  items-center">
+    <section className="bg-[#000002] h-full  font-outfit text-white flex flex-col  items-center ">
       <header className="w-full">
         <Header/>
       </header>
 
-      <main className="flex flex-col justify-center items-center -mt-[4%] border border-gray-500 rounded-3xl w-[92%] bg-[#1C1D1F]">
+      <main className="flex flex-col justify-center items-center -mt-[4%] border border-gray-500 rounded-3xl w-[92%] bg-[#1C1D1F] sm:px-0 px-5">
         <div className=" w-[98.5%]">
           <CantAndSearch/>
         </div>
