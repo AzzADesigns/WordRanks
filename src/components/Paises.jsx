@@ -1,45 +1,13 @@
-import { useEffect, useState } from "react";
-import axios from "axios";
-import { useIntersectionObserver } from "../hooks/useIntersectionObserver";
 
+import useCountries from "../hooks/useContextCountry";
+
+//TRATA DE NO PAGINAR, PRIMERO ENFOCATE EN QUE EL COMPONENTE FUNCIONE MOSTRANDO TODO DE UNA, Y AHI LEVANTA EL COMPONENTE, Y DESPUES VEZ COMO PAGINAS 
 export const Paises = () => {
-    const [allPaises, setAllPaises] = useState([]);
-    const [visiblePaises, setVisiblePaises] = useState([]);
-    const [page, setPage] = useState(1);
-    const ITEMS_PER_PAGE = 10;
+    const { getCountries } = useCountries();
 
-    const { ref: observerRef, isIntersecting } = useIntersectionObserver({
-        threshold: 1.0,
-    });
-
-    useEffect(() => {
-        axios
-            .get("https://restcountries.com/v3.1/all")
-            .then((response) => {
-                setAllPaises(response.data);
-                setVisiblePaises(response.data.slice(0, ITEMS_PER_PAGE));
-            })
-            .catch((error) => {
-                console.error("Error fetching countries:", error);
-            });
-    }, []);
-
-    useEffect(() => {
-        if (isIntersecting) {
-            setPage((prevPage) => prevPage + 1);
-        }
-    }, [isIntersecting]);
-
-    useEffect(() => {
-        const start = (page - 1) * ITEMS_PER_PAGE;
-        const end = start + ITEMS_PER_PAGE;
-        setVisiblePaises((prev) => [...prev, ...allPaises.slice(start, end)]);
-    }, [page, allPaises]);
 
     return (
         <div className="h-full text-gray-200 w-full flex flex-col justify-center xl:mr-0 lg:mr-4">
-
-
             <section className="grid grid-cols-4 lg:grid-cols-5 gap-4 sm:grid-cols-4 border-gray-700 py-4 w-auto text-gray-600 font-bold sm:place-items-center lg:place-items-start sm:w-full 
             text-xs sm:text-base xl:text-lg 2xl:text-xl lg:text-[17px] mt-9 sm:mt-0
             ">
@@ -49,7 +17,7 @@ export const Paises = () => {
                 <h2 className=" ml-3 xl:ml-0 lg:ml-20 sm:ml-0 lg:w-28 ">Area (km²)</h2>
                 <h2 className=" xl:flex hidden">Region</h2>
             </section>
-            {visiblePaises.map((country, index) => (
+            {getCountries?.map((country, index) => (
                 <section key={index} className="grid xl:grid-cols-5 grid-cols-4 gap-4 border-gray-700 py-4 w-[95%]">
                     <div className="flex items-center justify-center">
                         <img
@@ -68,8 +36,7 @@ export const Paises = () => {
                     <h3 className="xl:flex items-center  2xl:text-2xl sm:w-40 lg:w-auto sm:pl-14  lg:text-xl xl:pl-11 xl:text-xl  hidden">{country.region}</h3>
                 </section>
             ))}
-            {/* Div que se observa con IntersectionObserver */}
-            <div ref={observerRef} className="h-50 bg-red w-full" />
+
         </div>
     );
 };
