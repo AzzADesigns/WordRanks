@@ -1,6 +1,6 @@
 import { CantAndSearch } from "./components/CantAndSearch"
 import { Header } from "./components/Header"
-import { Paises } from "./components/Paises"
+import { Paises } from "./components/Countries"
 import { SortRegionStatus } from "./components/SortRegionStatus"
 
 function App() {

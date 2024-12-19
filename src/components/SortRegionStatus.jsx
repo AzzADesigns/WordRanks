@@ -1,14 +1,21 @@
 import '../index.css';
+import useCountries from "../hooks/useContextCountry";
 
 
 export const SortRegionStatus = () => {
+
+    const { sortBy, sortCountries  } = useCountries();
+
+    const handleChange = (event) => {
+        sortCountries(event.target.value);
+    }
+
     return (
         <form className='text-gray-600 xl:text-xl sm:w-full font-bold sm:flex sm:flex-col  sm:items-start sm:pl-7 lg:ml-0 '>
             <fieldset className='w-full'>
                 <legend className="mb-4">Sort By</legend>
-                <select name="" id="" className='xl:w-[375px] lg:w-[260px] sm:w-[96%]  lg:ml-5 h-16 p-4 rounded-2xl bg-gray-bg border border-gray-600 text-white' >
+                <select name="" id="" value={sortBy} onChange={handleChange} className='xl:w-[375px] lg:w-[260px] sm:w-[96%]  lg:ml-5 h-16 p-4 rounded-2xl bg-gray-bg border border-gray-600 text-white' >
                     <option value="">Organize by ...</option>
-                    <option  value="Name">Name</option>
                     <option  value="Population">Population</option>
                     <option  value="area">Area</option>
                     <option  value="region">Region</option>

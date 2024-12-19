@@ -1,7 +1,6 @@
 
 import useCountries from "../hooks/useContextCountry";
 
-//TRATA DE NO PAGINAR, PRIMERO ENFOCATE EN QUE EL COMPONENTE FUNCIONE MOSTRANDO TODO DE UNA, Y AHI LEVANTA EL COMPONENTE, Y DESPUES VEZ COMO PAGINAS 
 export const Paises = () => {
     const { getCountries } = useCountries();
 
@@ -30,10 +29,10 @@ export const Paises = () => {
                     <h3 className="flex items-center 2xl:text-2xl sm:w-40 lg:w-auto pl-3 sm:pl-14 lg:pl-5 xl:text-xl lg:text-lg xl:ml-6  text-xs sm:text-sm">
                         {country.population.toLocaleString()}
                     </h3>
-                    <h3 className="flex ml-7 items-center  2xl:text-2xl  lg:w-auto sm:ml-14 lg:ml-5 xl:ml-11 xl:text-xl lg:text-lg text-xs sm:text-sm">
-                        {country.area?.toLocaleString()}
+                    <h3 className="flex ml-7 items-center  2xl:text-2xl  lg:w-auto sm:ml-14 lg:ml-5 xl:ml-9 xl:text-xl lg:text-lg text-xs sm:text-sm">
+                        {country.area.toLocaleString()}
                     </h3>
-                    <h3 className="xl:flex items-center  2xl:text-2xl sm:w-40 lg:w-auto sm:pl-14  lg:text-xl xl:pl-11 xl:text-xl  hidden">{country.region}</h3>
+                    <h3 className="xl:flex items-center  2xl:text-2xl sm:w-40 lg:w-auto sm:pl-14  lg:text-xl xl:pl-[52px] xl:text-xl  hidden">{country.region}</h3>
                 </section>
             ))}
 
