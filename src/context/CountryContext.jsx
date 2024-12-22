@@ -1,5 +1,9 @@
 import { createContext, useEffect, useState } from "react";
 import axios from "axios";
+//https://app.zety.es/app/rsme/105ddab0-a170-420d-84eb-693d1db741b9/content/75e9e5df-7379-4e73-b1e1-b3db93895c2d
+
+//https://www.youtube.com/watch?v=uAUQ0XdQnGY
+
 
 const CountryContext = createContext();
 
@@ -32,19 +36,16 @@ export const CountryProvider = ({ children }) => {
     const filterAndSortCountries = () => {
         let countries = [...getCountries];
 
-        // Filtrar por región
         if (filterRegionValue) {
             countries = countries.filter((country) => country.region === filterRegionValue);
         }
 
-        // Filtrar por membresía
         if (isMember === "Independent") {
             countries = countries.filter((country) => country.unMember === false);
         } else if (isMember === "IsMember") {
             countries = countries.filter((country) => country.unMember === true);
         }
 
-        // Ordenar
         return countries.sort(orderBy[sortBy]);
     };
 

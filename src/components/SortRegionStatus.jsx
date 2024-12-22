@@ -25,8 +25,7 @@ export const SortRegionStatus = () => {
                     id=""
                     value={sortBy}
                     onChange={handleChange}
-                    className='xl:w-[375px] lg:w-[260px] sm:w-[96%]  lg:ml-5 h-16 p-4 rounded-2xl bg-gray-bg border border-gray-600 text-white'>
-                    <option value="">Organize by ...</option>
+                    className='xl:w-[375px] lg:w-[260px] sm:w-[96%]  lg:ml-5 h-16 p-4 rounded-2xl bg-gray-bg border border-gray-600 text-white cursor-pointer'>
                     <option value="population">Population</option>
                     <option value="area">Area</option>
                     <option value="region">Region</option>
