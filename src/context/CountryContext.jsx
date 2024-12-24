@@ -13,6 +13,7 @@ export const CountryProvider = ({ children }) => {
     const [sortedCountries, setSortedCountries] = useState([]);
     const [filterRegionValue, setFilterRegionValue] = useState("");
     const [isMember, setIsMember] = useState("");
+    const [selectedCountry, setSelectedCountry] = useState(null);
 
     useEffect(() => {
         axios
@@ -20,7 +21,6 @@ export const CountryProvider = ({ children }) => {
             .then((response) => {
                 setGetCountries(response.data);
                 setSortedCountries(response.data);
-                console.log(response.data)
             })
             .catch((error) => {
                 console.error("Error fetching countries:", error);
@@ -80,6 +80,8 @@ export const CountryProvider = ({ children }) => {
                 filterByRegion,
                 isMember,
                 filterByStatus,
+                selectedCountry,
+                setSelectedCountry,
             }}
         >
             {children}

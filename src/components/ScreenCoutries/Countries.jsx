@@ -1,9 +1,13 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
+import CountryContext from "../../context/CountryContext";
 
 export const Countries = ({ countries }) => {
     const [showInfoCountry, setShowInfoCountry] = useState(false);
+    const { setSelectedCountry } = useContext(CountryContext);
 
-    const handleClick = () =>{
+
+    const handleClick = (country) =>{
+        setSelectedCountry(country);
         setShowInfoCountry(!showInfoCountry)
     }
 
@@ -21,13 +25,13 @@ export const Countries = ({ countries }) => {
                 <section
                     key={index}
                     className="grid xl:grid-cols-5 grid-cols-4 gap-4 border-gray-700 py-4 w-[95%] lg:hover:scale-105 lg:hover:shadow-2xl  transition-transform duration-200 cursor-pointer"
-                    //onClick={}
+                    onClick={() => handleClick(country)}
                 >
                     <div className="flex items-center justify-center">
                         <img
                             src={country.flags.svg}
                             alt={`Flag of ${country.name.common}`}
-                            className="w-20 h-16 object-cover rounded-xl xl:ml-2"
+                            className="w-16 sm:w-20 h-12 sm:h-16 object-cover rounded-xl xl:ml-2"
                         />
                     </div>
                     <h3 className="flex items-center 2xl:text-2xl sm:w-40 lg:w-auto ml-2 sm:ml-14 lg:ml-5 xl:text-xl lg:text-lg text-xs sm:text-sm xl:w-52">

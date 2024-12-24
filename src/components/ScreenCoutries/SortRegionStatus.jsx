@@ -1,5 +1,5 @@
-import '../index.css';
-import useCountries from "../hooks/useContextCountry";
+import '../../index.css';
+import useCountries from "../../hooks/useContextCountry";
 
 export const SortRegionStatus = () => {
     const { sortBy, sortCountries, filterByRegion, filterByStatus } = useCountries();
