@@ -4,7 +4,6 @@ import { FaRegWindowClose } from "react-icons/fa";
 
 export const Country = () => {
     const { selectedCountry, setSelectedCountry, getCountries } = useContext(CountryContext); 
-    console.log("Rendered country:", selectedCountry);
 
     if (!selectedCountry) {
         return <div>No country selected</div>; 
@@ -17,7 +16,6 @@ export const Country = () => {
     const handleClick = (borderCountry) => {
         if (selectedCountry.cca3 !== borderCountry.cca3) {
             setSelectedCountry(borderCountry);
-            console.log(selectedCountry);
         }
     };
 
