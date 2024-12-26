@@ -8,7 +8,7 @@ function App() {
       <header className="w-full">
         <Header />
       </header>
-      <main className="w-full flex justify-center ">
+      <main className="w-full flex justify-center max-w-[2000px] ">
         <Main/>
       </main>
     </section>
