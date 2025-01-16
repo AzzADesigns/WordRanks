@@ -1,6 +1,8 @@
-export const CantAndSearch = ({ setFilter, countries }) => {
+import React, { useState, useMemo } from 'react';
+
+export const CantAndSearch = (({ setFilter, countries }) => {
     const handleChangeCountryName = (e) => {
-      setFilter(e.target.value.toLowerCase()); // Actualizar el filtro en App
+        setFilter(e.target.value.toLowerCase()); // Actualizar el filtro en App
     };
 
     return (
@@ -19,4 +21,4 @@ export const CantAndSearch = ({ setFilter, countries }) => {
             </div>
         </section>
     );
-};
+});

@@ -1,5 +1,6 @@
 import '../../index.css';
 import useCountries from "../../hooks/useContextCountry";
+import { motion } from "motion/react"
 
 export const SortRegionStatus = () => {
     const { sortBy, sortCountries, filterByRegion, filterByStatus } = useCountries();
@@ -31,24 +32,25 @@ export const SortRegionStatus = () => {
                     <option value="region">Region</option>
                 </select>
             </fieldset>
+            
             <fieldset className='mt-16'>
                 <legend className="mb-2">Region</legend>
                 <div className='lg:flex lg:flex-col lg:gap-3 mt-4 sm:flex '>
-                    <div className='lg:flex lg:gap-11  sm:flex'>
-                        <button type="button" onClick={() => handleRegionClick("Americas")} className='col-span-2 hover:bg-gray-600 hover:text-white p-2 sm:px-3 lg:px-5 rounded-2xl'>Americas</button>
-                        <button type="button" onClick={() => handleRegionClick("Antarctic")} className='hover:bg-gray-600 hover:text-white p-2 rounded-2xl sm:px-3 lg:px-5'>Antarctic</button>
-                    </div>
-                    <div className='sm:flex lg:flex-wrap'>
-                        <button type="button" onClick={() => handleRegionClick("Africa")} className='lg:mr-9 hover:bg-gray-600 hover:text-white p-2 sm:px-3 lg:px-5 rounded-2xl'>Africa</button>
-                        <button type="button" onClick={() => handleRegionClick("Asia")} className='lg:mr-9 hover:bg-gray-600 hover:text-white p-2 sm:px-3 lg:px-5 rounded-2xl'>Asia</button>
-                        <button type="button" onClick={() => handleRegionClick("Europe")} className='lg:mr-9 hover:bg-gray-600 hover:text-white p-2 sm:px-3 lg:px-5 rounded-2xl xl:mt-0 lg:mt-4'>Europe</button>
+                    <aside className='lg:flex lg:gap-11  sm:flex'>
+                        <motion.button whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }} type="button" onClick={() => handleRegionClick("Americas")} className='col-span-2 hover:bg-gray-600 hover:text-white p-2 sm:px-3 lg:px-5 rounded-2xl'>Americas</motion.button>
+                        <motion.button whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }} type="button" onClick={() => handleRegionClick("Antarctic")} className='hover:bg-gray-600 hover:text-white p-2 rounded-2xl sm:px-3 lg:px-5'>Antarctic</motion.button>
+                    </aside>
+                    <aside className='sm:flex lg:flex-wrap'>
+                        <motion.button whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }} type="button" onClick={() => handleRegionClick("Africa")} className='lg:mr-9 hover:bg-gray-600 hover:text-white p-2 sm:px-3 lg:px-5 rounded-2xl'>Africa</motion.button>
+                        <motion.button whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }} type="button" onClick={() => handleRegionClick("Asia")} className='lg:mr-9 hover:bg-gray-600 hover:text-white p-2 sm:px-3 lg:px-5 rounded-2xl'>Asia</motion.button>
+                        <motion.button whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }} type="button" onClick={() => handleRegionClick("Europe")} className='lg:mr-9 hover:bg-gray-600 hover:text-white p-2 sm:px-3 lg:px-5 rounded-2xl xl:mt-0 lg:mt-4'>Europe</motion.button>
                         <button type="button" onClick={() => handleRegionClick("Oceania")} className='col-span-3 hover:bg-gray-600 hover:text-white p-2 sm:px-3 lg:px-5 rounded-2xl xl:hidden lg:flex-col'>Oceania</button>
                         <button type="button" onClick={() => handleRegionClick("")} className='col-span-3 hover:bg-gray-600 hover:text-white p-2 sm:px-3 lg:px-5 rounded-2xl xl:hidden lg:flex-col'>All</button>
-                    </div>
-                    <div className='xl:flex'>
-                        <button type="button" onClick={() => handleRegionClick("Oceania")} className='col-span-3 hover:bg-gray-600 hover:text-white p-2 sm:px-3 lg:px-5 rounded-2xl xl:flex hidden'>Oceania</button>
-                        <button type="button" onClick={() => handleRegionClick("")} className=' xl:text-3 hover:bg-gray-600 hover:text-white p-2 sm:px-3 lg:px-5 rounded-2xl xl:flex hidden'>All</button>
-                    </div>
+                    </aside>
+                    <aside className='xl:flex'>
+                        <motion.button whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }} type="button" onClick={() => handleRegionClick("Oceania")} className='col-span-3 hover:bg-gray-600 hover:text-white p-2 sm:px-3 lg:px-5 rounded-2xl xl:flex hidden'>Oceania</motion.button>
+                        <motion.button whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }} type="button" onClick={() => handleRegionClick("")} className=' xl:text-3 hover:bg-gray-600 hover:text-white p-2 sm:px-3 lg:px-5 rounded-2xl xl:flex hidden'>All</motion.button>
+                    </aside>
                 </div>
             </fieldset>
 

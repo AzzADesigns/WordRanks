@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import CountryContext from "../../context/CountryContext";
 import { FaRegWindowClose } from "react-icons/fa";
+import { motion } from "motion/react"
 
 export const Country = () => {
     const { selectedCountry, setSelectedCountry, getCountries } = useContext(CountryContext); 
@@ -20,7 +21,10 @@ export const Country = () => {
     };
 
     return (
-        <div className="flex flex-col items-center  bg-[#1C1D1F] w-full lg:w-[80%] xl:w-[60%] absolute lg:relative lg:-mt-16  left-0 lg:left-[10%] lg:right-[10%] xl:left-[20%] xl:right-[20%] top-36 lg:top-0 lg:border lg:shadow-2xl border-gray-700 lg:rounded-3xl">
+        <motion.div 
+            initial={{ backgroundColor: "#1C1D1F", opacity: 0 }}
+            whileInView={{ backgroundColor: "#1C1D1F", opacity: 1 }}
+            className="flex flex-col items-center  bg-[#1C1D1F] w-full lg:w-[80%] xl:w-[60%] absolute lg:relative lg:-mt-16  left-0 lg:left-[10%] lg:right-[10%] xl:left-[20%] xl:right-[20%] top-36 lg:top-0 lg:border lg:shadow-2xl border-gray-700 lg:rounded-3xl">
             <div className=" mt-52 absolute right-5 bottom-[90%]">
                 <button  onClick={handleSelectedCountry}><FaRegWindowClose className="w-8 h-8 lg:w-12 lg:h-12 text-gray-600" /></button>
             </div>
@@ -100,6 +104,6 @@ export const Country = () => {
                 </div>
             </div>
 
-        </div>
+        </motion.div>
     );
 };

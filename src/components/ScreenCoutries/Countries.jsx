@@ -1,5 +1,6 @@
 import { useContext, useState, useEffect, useRef } from "react";
 import CountryContext from "../../context/CountryContext";
+import { motion } from "motion/react"
 
 export const Countries = ({ countries }) => {
     const [visibleCountries, setVisibleCountries] = useState([]);
@@ -40,7 +41,7 @@ export const Countries = ({ countries }) => {
     }, [visibleCountries, loading]);
 
     return (
-        <div className="h-full text-gray-200 w-full flex flex-col justify-center xl:mr-0 lg:mr-4">
+        <motion.div className="h-full text-gray-200 w-full flex flex-col justify-center xl:mr-0 lg:mr-4">
             <section className="grid grid-cols-4 lg:grid-cols-5 gap-4 sm:grid-cols-4 border-gray-700 py-4 w-auto text-gray-600 font-bold sm:place-items-center lg:place-items-start sm:w-full 
                 text-xs sm:text-base xl:text-lg 2xl:text-xl lg:text-[17px] mt-9 sm:mt-0">
                 <h2 className="2xl:ml-20 xl:ml-1 lg:ml-8 sm:mr-14 lg:mr-0">Flag</h2>
@@ -50,18 +51,26 @@ export const Countries = ({ countries }) => {
                 <h2 className="xl:flex hidden">Region</h2>
             </section>
             {visibleCountries.map((country, index) => (
-            <section
+            <motion.div
+                initial={{ opacity: 0, scale:0.9 }}
+                whileInView={{ opacity: 1, scale:1 }}
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
                 key={index}
-                className="grid xl:grid-cols-5 grid-cols-4 gap-4 border-gray-700 py-4 w-[95%] lg:hover:scale-105 lg:hover:shadow-2xl transition-transform duration-200 cursor-pointer"
+                className="grid xl:grid-cols-5 grid-cols-4 gap-4 border-gray-700 py-4 w-[95%]  lg:hover:shadow-2xl transition-transform duration-200 cursor-pointer"
                 onClick={() => handleClick(country)}
             >
-                <div className="flex items-center justify-center">
+                <motion.div  
+                    initial={{ transform: "translateX(-100px)" }}
+                    animate={{ transform: "translateX(0px)" }}
+                    transition={{ type: "spring"}}
+                className="flex items-center justify-center">
                     <img
                         src={country.flags.svg}
                         alt={`Flag of ${country.name.common}`}
                         className="w-16 sm:w-20 h-12 sm:h-16 object-cover rounded-xl xl:ml-2"
                     />
-                </div>
+                </motion.div>
                 <h3 className="flex items-center 2xl:text-2xl sm:w-40 lg:w-auto ml-2 sm:ml-14 lg:ml-5 xl:text-xl lg:text-lg text-xs sm:text-sm xl:w-52">
                     {country.name.common}
                 </h3>
@@ -74,10 +83,10 @@ export const Countries = ({ countries }) => {
                 <h3 className="xl:flex items-center 2xl:text-2xl sm:w-40 lg:w-auto sm:pl-14 lg:text-xl xl:pl-[52px] xl:text-xl hidden xl:w-52">
                     {country.region}
                 </h3>
-            </section>
+            </motion.div>
             ))}
             {loading && <div>Loading more countries...</div>}
             <div ref={loaderRef} />
-        </div>
+        </motion.div>
     );
 };
